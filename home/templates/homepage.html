@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main_bg{
+           background: linear-gradient(to bottom, #6DD5FA, #FFFFFF);
+            background-size: cover;
+            min-height:100vh;
+        }
+        .main-header{
+            font-family: "Poppins", sans-serif;
+            color: #0A3D62;     /* Strong readable blue */
+            font-size: 1.8rem;
+            font-weight: 600;
+            text-align: center;
+            padding: 15px 0;
+        }
+        .cityname{
+           font-family: "Poppins", sans-serif;   /* consistent with header */
+            color: #fffefe;                        /* same as header for harmony */
+            font-size: 1.6rem;                     /* slightly smaller than header */
+            font-weight: 500;                      /* medium weight for subtlety */
+            text-align: center;
+            margin-top: 8px;
+            letter-spacing: 0.5px;  
+        }
+        .forecastcard{
+             max-width: 400px;                  /* nice width for content */
+            margin: 30px auto;                  /* center horizontally with spacing */
+            padding: 20px 25px;                 /* comfortable padding */
+            background-color: rgba(255, 255, 255, 0.85); /* semi-transparent white */
+            border-radius: 15px;                /* smooth rounded corners */
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* soft shadow for depth */
+            text-align: center;                 /* center text/icons */
+            font-family: "Poppins", sans-serif; /* matches header & cityname */
+            color: #0A3D62; 
+        }
+        .temp {
+            font-family: "Poppins", sans-serif; /* matches header & city name */
+            color: #0A3D62;                     /* strong blue for readability */
+            font-size: 4rem;                     /* big & prominent */
+            font-weight: 600;                     /* bold for emphasis */
+            margin: 10px 0;
+            text-align: center;
+        }
+        .extra-info{
+            background: linear-gradient(to bottom, #6DD5FA, #FFFFFF);
+            border-radius: 10px;
+            padding-top: 10px;
+            box-shadow: 0 0 20px rgba(0, 150, 255, 0.25);
+            margin-bottom: 10px;
+
+        }
+        .extra-info-details{
+            color:black;
+            margin-left: 10px;
+        }
+        .extra-info-temp{
+            margin-left: auto;
+            margin-right: 10px;
+        }
+        .bottomheader {
+        font-family: "Poppins", sans-serif; /* consistent with other headers */
+        font-size: 1.5rem;                  /* slightly smaller than main temp */
+        font-weight: 600;                    /* bold enough to stand out */
+        text-align: center;
+        color: #0A3D62;                      /* same strong blue for readability */
+        padding: 12px 0;
+        margin-bottom: 15px;
+        border-bottom: 2px solid rgba(10, 61, 98, 0.3); /* subtle underline */
+    }
+    .bottomdetails {
+    font-family: "Poppins", sans-serif;
+    font-size: 1.2rem;           
+    font-weight: 500;             /* medium weight */
+    color: #0A3D62;               /* same strong blue */
+    margin: 5px 0;
+    text-align: center;
+    
+}
+
+#bottomDetailsTemp {
+    font-family: "Poppins", sans-serif;
+    font-size: 1.3rem;           /* slightly larger than label */
+    font-weight: 600;             /* bold for emphasis */
+    color: #0A3D62;               /* strong blue */
+    margin: 5px 0;
+    text-align: center;
+}
+
+    
+
+
+    </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+<body>
+    <div class="main_bg">
+        <h1 class="main-header">
+            Weather Forecast
+        </h1>
+        <!-- <form class="d-flex justify-content-center" role="search">
+        <input class="form-control me-2" id="searchCity" style="width: 250px;" type="search" placeholder="Search" aria-label="Search"/>
+        <button class="btn btn-outline-primary" id="searchCityBtn" type="submit">Search</button>
+        </form> -->
+        <p class="cityname" id="cityName">
+        </p>
+        <div class="forecastcard">
+            <h1 class="temp" id="Temp">
+            </h1>
+            <p class="status" id="Status">
+            </p>
+        <div class="extra-info d-flex">
+            <p class="extra-info-details">Feels like</p>
+            <p class="extra-info-temp" id="extraInfoFeellike"></p>
+        </div>
+        <div class="extra-info d-flex">
+            <p class="extra-info-details">Humidity</p>
+            <p class="extra-info-temp" id="extraInfoHumidity"></p>
+        </div>
+        <div class="extra-info d-flex">
+            <p class="extra-info-details">Pressure</p>
+            <p class="extra-info-temp" id="extraInfoPressure"></p>
+        </div>
+        <div class="extra-info d-flex">
+            <p class="extra-info-details">Wind Speed</p>
+            <p class="extra-info-temp" id="extraInfoWindSpeed"></p>
+        </div>
+
+        </div>
+        <div class="forecastcard" id="forecastCard">
+            <h1 class="bottomheader">
+               Hourly Forecast (After 3 Hours)
+            </h1>
+            
+
+        </div>
+    </div>
+<script src="{% static 'homepagedynamic.js' %}"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</body>
+</html>
