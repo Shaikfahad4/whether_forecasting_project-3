@@ -1,4 +1,7 @@
 from django.shortcuts import render
-# Create your views here.
+import os
+
 def homepage_view(request):
-    return render(request,"homepage.html")
+    print("MY KEY INSIDE DJANGO:", os.environ.get("WEATHER_API_KEY"))
+    Api_key = os.environ.get("WEATHER_API_KEY", "")
+    return render(request, "homepage.html", {"Api_key": Api_key})
